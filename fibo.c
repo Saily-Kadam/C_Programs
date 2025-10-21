@@ -1,22 +1,18 @@
-//. Print the first n terms of the Fibonacci series
+//Print the first n terms of the Fibonacci series using a for loop.
 #include <stdio.h>
 
 int main() {
-    int n, i;
-    long long int t1 = 0, t2 = 1, nextTerm;
+    int terms, first = 0, second = 1, fibonacci, count;
 
     printf("Enter the number of terms: ");
-    scanf("%d", &n);
+    scanf("%d", &terms);
 
-    printf("Fibonacci Series: ");
-
-    for (i = 1; i <= n; ++i) {
-        printf("%lld ", t1);
-        nextTerm = t1 + t2;
-        t1 = t2;
-        t2 = nextTerm;
+    for(count = 1; count <= terms; count++) {
+        printf("%d ", first);
+        fibonacci = first + second;
+        first = second;
+        second = fibonacci;
     }
 
-    printf("\n");
     return 0;
 }
