@@ -1,53 +1,43 @@
-//merge sort
 #include <stdio.h>
 
-void merge(int arr[], int left, int mid, int right) {
-    int n1 = mid - left + 1;
-    int n2 = right - mid;
-
-    int L[n1], R[n2];
-
-    for(int i = 0; i < n1; i++)
-        L[i] = arr[left + i];
-    for(int j = 0; j < n2; j++)
-        R[j] = arr[mid + 1 + j];
-
-    int i = 0, j = 0, k = left;
-
-    while(i < n1 && j < n2) {
-        if(L[i] <= R[j]) arr[k++] = L[i++];
-        else arr[k++] = R[j++];
-    }
-
-    while(i < n1) arr[k++] = L[i++];
-    while(j < n2) arr[k++] = R[j++];
-}
-
-void mergeSort(int arr[], int left, int right) {
-    if(left < right) {
-        int mid = left + (right - left)/2;
-
-        mergeSort(arr, left, mid);
-        mergeSort(arr, mid + 1, right);
-
-        merge(arr, left, mid, right);
-    }
-}
-
 int main() {
-    // Array with hardcoded values:
-    int arr[] = {34, 7, 23, 32, 5, 62};
-    int n = sizeof(arr)/sizeof(arr[0]);
+    int a[50], b[50], c[100];
+    int n1, n2, i, j, k = 0, temp;
 
-    printf("Original array: ");
-    for(int i = 0; i < n; i++) printf("%d ", arr[i]);
-    printf("\n");
+    printf("Enter size of first array: ");
+    scanf("%d", &n1);
+    printf("Enter %d elements: ", n1);
+    for (i = 0; i < n1; i++)
+        scanf("%d", &a[i]);
 
-    mergeSort(arr, 0, n-1);
+    printf("Enter size of second array: ");
+    scanf("%d", &n2);
+    printf("Enter %d elements: ", n2);
+    for (i = 0; i < n2; i++)
+        scanf("%d", &b[i]);
 
-    printf("Sorted array: ");
-    for(int i = 0; i < n; i++) printf("%d ", arr[i]);
-    printf("\n");
+    // merge arrays
+    for (i = 0; i < n1; i++)
+        c[k++] = a[i];
+    for (i = 0; i < n2; i++)
+        c[k++] = b[i];
+
+    int n = n1 + n2;
+
+    // sort merged array (bubble sort)
+    for (i = 0; i < n - 1; i++) {
+        for (j = 0; j < n - i - 1; j++) {
+            if (c[j] > c[j + 1]) {
+                temp = c[j];
+                c[j] = c[j + 1];
+                c[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("Merged & Sorted Array: ");
+    for (i = 0; i < n; i++)
+        printf("%d ", c[i]);
 
     return 0;
 }
