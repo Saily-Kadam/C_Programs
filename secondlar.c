@@ -1,27 +1,31 @@
-//find the second largest number
 #include <stdio.h>
 #include <limits.h>
 
-int main() {
-    int arr[] = {12, 35, 1, 10, 34, 1};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    
-    int first = INT_MIN;
-    int second = INT_MIN;
+int secondLargest(int arr[], int n) {
+    int largest = INT_MIN, second = INT_MIN;
 
-    for (int i = 0; i < size; i++) {
-        if (arr[i] > first) {
-            second = first;
-            first = arr[i];
-        } else if (arr[i] > second && arr[i] != first) {
+    for(int i = 0; i < n; i++) {
+        if(arr[i] > largest) {
+            second = largest;
+            largest = arr[i];
+        }
+        else if(arr[i] > second && arr[i] != largest) {
             second = arr[i];
         }
     }
+    return second;
+}
 
-    if (second == INT_MIN)
-        printf("There is no second largest element.\n");
+int main() {
+    int arr[] = {12, 35, 1, 10, 34, 1};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    int result = secondLargest(arr, n);
+
+    if(result == INT_MIN)
+        printf("Second largest does not exist.\n");
     else
-        printf("Second largest element is %d\n", second);
+        printf("Second largest element = %d\n", result);
 
     return 0;
 }
