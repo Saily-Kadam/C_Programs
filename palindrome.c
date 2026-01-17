@@ -1,27 +1,27 @@
-// Check if a number is a palindrome 
 #include <stdio.h>
 
+int isPalindrome(int num) {
+    int original = num;
+    int rev = 0;
+
+    while (num > 0) {
+        rev = rev * 10 + (num % 10);
+        num /= 10;
+    }
+
+    return original == rev;
+}
+
 int main() {
-    int number, original, reversed = 0, remainder;
+    int num;
 
-    printf("Enter an integer: ");
-    scanf("%d", &number);
+    printf("Enter a number: ");
+    scanf("%d", &num);
 
-    original = number;
-
-    // Reverse the number
-    while (number != 0) {
-        remainder = number % 10;
-        reversed = reversed * 10 + remainder;
-        number /= 10;
-    }
-
-    // Check if original and reversed are the same
-    if (original == reversed) {
-        printf("%d is a palindrome.\n", original);
-    } else {
-        printf("%d is not a palindrome.\n", original);
-    }
+    if (isPalindrome(num))
+        printf("Palindrome number\n");
+    else
+        printf("Not a palindrome number\n");
 
     return 0;
 }
