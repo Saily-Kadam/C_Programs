@@ -1,4 +1,4 @@
-// Dynamically allocate and read an array of size n. Find the sum and average of all elements in this array
+// Dynamically allocate and read an array of size n. Find the sum and average of all elements in this array.
 #include<stdio.h>
 #include<stdlib.h>
 int main()
