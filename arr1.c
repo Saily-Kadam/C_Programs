@@ -31,7 +31,7 @@ printf("Positive numbers: ");
 
     // Print negative numbers
     printf("Negative numbers: ");
-    for (int i = 0; i < negCount; i++) {
+    for (int i = 0; i < negCount; i++) { 
         printf("%d ", neg[i]);
     }
     printf("\n");
