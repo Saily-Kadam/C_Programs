@@ -1,4 +1,4 @@
-//Railway (user) Management System
+//Railway (user) Management System 
 #include<stdio.h>
 #include<stdlib.h>
 struct railwayUser{
