@@ -4,7 +4,6 @@
 
 int main() {
     int n, k, i;
-
     // Input array size
     printf("Enter number of elements: ");
     scanf("%d", &n);
