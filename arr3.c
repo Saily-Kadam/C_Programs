@@ -9,7 +9,6 @@ int main() {
     scanf("%d", &n);
 
     int arr[n];
-
     // Input array elements
     printf("Enter %d elements: ", n);
     for(i = 0; i < n; i++)
