@@ -3,8 +3,6 @@
 
 int main() {
     float angle1, angle2, angle3, sum;
-
-    
     printf("Enter the three angles of the triangle:\n");
     scanf("%f %f %f", &angle1, &angle2, &angle3);
 
