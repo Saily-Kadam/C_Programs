@@ -2,7 +2,7 @@
 //numbers into two arrays.
 #include <stdio.h>   // For input/output functions
 #include <stdlib.h>  // For malloc() and free()
-
+ 
 int main() {
     int n;
     printf("Enter the number of elements: ");
