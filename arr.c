@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 int main() {
     int a[50], freq[50];
     int n, i, j, count;
