@@ -6,4 +6,4 @@ int main()
     scanf("%c", &ch);
     printf("char = %c", ch);
     return 0;
-}
+} 
