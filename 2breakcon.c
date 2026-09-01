@@ -1,6 +1,5 @@
 // Program to keep summing until the user enters a negative number, then break the loop and print the sum
 #include <stdio.h>
-
 int main() {
     int number;
     int sum = 0;
