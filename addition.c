@@ -7,4 +7,4 @@ int main()
     printf("i=%d , j=%d", i, j);
     printf("The sum of the two given numbers is:%d\n",i+j);
     return 0;
-}
+}                                              
